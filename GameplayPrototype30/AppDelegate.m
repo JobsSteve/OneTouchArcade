@@ -12,6 +12,12 @@
 #import "GameConfig.h"
 #import "HelloWorldLayer.h"
 #import "RootViewController.h"
+#import "FarcomMenu.h"
+
+//#import "Parallax.h"
+#import "Level_4.h"
+#import "Level_1.h"
+
 
 @implementation AppDelegate
 
@@ -82,11 +88,11 @@
 	// By default, this template only supports Landscape orientations.
 	// Edit the RootViewController.m file to edit the supported orientations.
 	//
-#if GAME_AUTOROTATION == kGameAutorotationUIViewController
-	[director setDeviceOrientation:kCCDeviceOrientationPortrait];
-#else
-	[director setDeviceOrientation:kCCDeviceOrientationLandscapeLeft];
-#endif
+//#if GAME_AUTOROTATION == kGameAutorotationUIViewController
+//	[director setDeviceOrientation:kCCDeviceOrientationPortrait];
+//#else
+    [director setDeviceOrientation:kCCDeviceOrientationLandscapeLeft];
+//#endif
 	
 	[director setAnimationInterval:1.0/60];
 	[director setDisplayFPS:YES];
@@ -110,7 +116,12 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];
+	//[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];
+   [[CCDirector sharedDirector] runWithScene: [FarcomMenu node]];
+    //[[CCDirector sharedDirector] runWithScene: [Level_1 node]];
+
+
+    
 }
 
 
